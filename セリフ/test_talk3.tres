@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueEntry" load_steps=3 format=3 uid="uid://v8yjj610obva"]
+
+[ext_resource type="Texture2D" uid="uid://ils7x2aeb88j" path="res://表情/照れ (1).jpg" id="1_1kmkj"]
+[ext_resource type="Script" uid="uid://dl1gyynno32tb" path="res://DialogueEntry.gd" id="1_fqpy4"]
+
+[resource]
+script = ExtResource("1_fqpy4")
+portrait = ExtResource("1_1kmkj")
+text = "おしりで戦うのはなんなんだろう……"
+metadata/_custom_type_script = "uid://dl1gyynno32tb"

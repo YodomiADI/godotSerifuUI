@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueEntry" load_steps=3 format=3 uid="uid://6yiavjt3xyg"]
+
+[ext_resource type="Texture2D" uid="uid://cm7na226dcven" path="res://表情/通常.jpg" id="1_31uy3"]
+[ext_resource type="Script" uid="uid://dl1gyynno32tb" path="res://DialogueEntry.gd" id="2_g0yfi"]
+
+[resource]
+script = ExtResource("2_g0yfi")
+portrait = ExtResource("1_31uy3")
+text = "必殺技ゲージ貯めるよ"
+metadata/_custom_type_script = "uid://dl1gyynno32tb"

@@ -1,0 +1,134 @@
+[gd_scene load_steps=10 format=3 uid="uid://bdqphig6mwh74"]
+
+[ext_resource type="Script" uid="uid://cuk1e8qyvv72d" path="res://DialogueSystem.gd" id="1_qmr60"]
+[ext_resource type="Texture2D" uid="uid://4sb36fyvtvou" path="res://image/MainFrame.png" id="2_8k1qw"]
+[ext_resource type="Texture2D" uid="uid://3ay2g43pfle7" path="res://image/Faceframe.png" id="3_pwo4j"]
+[ext_resource type="Texture2D" uid="uid://cm7na226dcven" path="res://表情/通常.jpg" id="4_chjrq"]
+[ext_resource type="Resource" uid="uid://bsve3eljufy85" path="res://セリフ/test_talk.tres" id="5_8k1qw"]
+[ext_resource type="Resource" uid="uid://6yiavjt3xyg" path="res://セリフ/test_talk2.tres" id="6_pwo4j"]
+[ext_resource type="Resource" uid="uid://v8yjj610obva" path="res://セリフ/test_talk3.tres" id="7_chjrq"]
+
+[sub_resource type="Animation" id="Animation_qmr60"]
+resource_name = "new_animation"
+length = 15.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1, 4, 7.0333333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [ExtResource("5_8k1qw")],
+"method": &"play_dialogue"
+}, {
+"args": [ExtResource("6_pwo4j")],
+"method": &"play_dialogue"
+}, {
+"args": [ExtResource("7_chjrq")],
+"method": &"play_dialogue"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8k1qw"]
+_data = {
+&"play_dialogue": SubResource("Animation_qmr60")
+}
+
+[node name="DialogueSystem" type="Control"]
+custom_minimum_size = Vector2(600, 150)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1290.0
+offset_bottom = 734.0
+script = ExtResource("1_qmr60")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -10.0
+offset_top = -6.0
+offset_right = 1295.0
+offset_bottom = 737.0
+color = Color(0, 1, 0, 1)
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MainFrame" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 513.0
+offset_right = 1279.0
+offset_bottom = 722.0
+texture = ExtResource("2_8k1qw")
+patch_margin_left = 80
+patch_margin_top = 5
+patch_margin_right = 80
+patch_margin_bottom = 5
+
+[node name="HBox" type="HBoxContainer" parent="MainFrame"]
+clip_contents = true
+custom_minimum_size = Vector2(1280, 200)
+layout_mode = 1
+offset_left = 5.0
+offset_top = 7.0
+offset_right = 1285.0
+offset_bottom = 207.0
+
+[node name="PortraitContainer" type="Control" parent="MainFrame/HBox"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[node name="PortraitFrame" type="TextureRect" parent="MainFrame/HBox/PortraitContainer"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 5.0
+offset_right = 264.0
+offset_bottom = 281.0
+texture = ExtResource("3_pwo4j")
+
+[node name="FaceImage" type="TextureRect" parent="MainFrame/HBox/PortraitContainer"]
+clip_contents = true
+layout_mode = 0
+offset_left = 94.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 168.0
+texture = ExtResource("4_chjrq")
+expand_mode = 2
+
+[node name="TextContainer" type="Control" parent="MainFrame/HBox"]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="MainFrame/HBox/TextContainer"]
+visible = false
+layout_mode = 0
+offset_left = -167.0
+offset_top = -4.0
+offset_right = -81.0
+offset_bottom = 53.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "nao"
+
+[node name="DialogueLabel" type="RichTextLabel" parent="MainFrame/HBox/TextContainer"]
+custom_minimum_size = Vector2(600, 145)
+layout_mode = 0
+offset_left = 22.0
+offset_top = 36.0
+offset_right = 854.0
+offset_bottom = 181.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 32
+autowrap_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_8k1qw")
+}
