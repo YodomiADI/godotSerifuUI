@@ -1,12 +1,25 @@
-[gd_scene load_steps=10 format=3 uid="uid://bdqphig6mwh74"]
+[gd_scene load_steps=13 format=3 uid="uid://bdqphig6mwh74"]
 
 [ext_resource type="Script" uid="uid://cuk1e8qyvv72d" path="res://DialogueSystem.gd" id="1_qmr60"]
 [ext_resource type="Texture2D" uid="uid://4sb36fyvtvou" path="res://image/MainFrame.png" id="2_8k1qw"]
 [ext_resource type="Texture2D" uid="uid://3ay2g43pfle7" path="res://image/Faceframe.png" id="3_pwo4j"]
 [ext_resource type="Texture2D" uid="uid://cm7na226dcven" path="res://表情/通常.jpg" id="4_chjrq"]
+[ext_resource type="FontFile" uid="uid://b3v2ewqdondn0" path="res://GenEiLateMinP_v2.ttf" id="5_6irky"]
 [ext_resource type="Resource" uid="uid://bsve3eljufy85" path="res://セリフ/test_talk.tres" id="5_8k1qw"]
 [ext_resource type="Resource" uid="uid://6yiavjt3xyg" path="res://セリフ/test_talk2.tres" id="6_pwo4j"]
 [ext_resource type="Resource" uid="uid://v8yjj610obva" path="res://セリフ/test_talk3.tres" id="7_chjrq"]
+[ext_resource type="Resource" uid="uid://c8lackb8xqs7w" path="res://セリフ/test_talk4.tres" id="9_058q4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6irky"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0, 0, 0, 0.46666667)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [sub_resource type="Animation" id="Animation_qmr60"]
 resource_name = "new_animation"
@@ -18,8 +31,8 @@ tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(1, 4, 7.0333333),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(1, 4, 7.0333333, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "values": [{
 "args": [ExtResource("5_8k1qw")],
 "method": &"play_dialogue"
@@ -28,6 +41,9 @@ tracks/0/keys = {
 "method": &"play_dialogue"
 }, {
 "args": [ExtResource("7_chjrq")],
+"method": &"play_dialogue"
+}, {
+"args": [ExtResource("9_058q4")],
 "method": &"play_dialogue"
 }]
 }
@@ -54,10 +70,11 @@ offset_bottom = 737.0
 color = Color(0, 1, 0, 1)
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
-visible = false
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.5, 0.5)
+autoplay = true
 
 [node name="MainFrame" type="NinePatchRect" parent="."]
 layout_mode = 0
@@ -120,12 +137,19 @@ text = "nao"
 [node name="DialogueLabel" type="RichTextLabel" parent="MainFrame/HBox/TextContainer"]
 custom_minimum_size = Vector2(600, 145)
 layout_mode = 0
-offset_left = 22.0
-offset_top = 36.0
-offset_right = 854.0
-offset_bottom = 181.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 32
+offset_left = -41.0
+offset_top = 28.0
+offset_right = 906.0
+offset_bottom = 173.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 8
+theme_override_fonts/normal_font = ExtResource("5_6irky")
+theme_override_font_sizes/normal_font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_6irky")
 autowrap_mode = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

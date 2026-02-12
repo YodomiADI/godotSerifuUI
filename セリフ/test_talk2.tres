@@ -6,5 +6,6 @@
 [resource]
 script = ExtResource("2_g0yfi")
 portrait = ExtResource("1_31uy3")
-text = "必殺技ゲージ貯めるよ"
+text = "操作はおぼつかないけど、
+試しに移動してみようか。"
 metadata/_custom_type_script = "uid://dl1gyynno32tb"
