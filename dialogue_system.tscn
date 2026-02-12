@@ -1,14 +1,26 @@
-[gd_scene load_steps=13 format=3 uid="uid://bdqphig6mwh74"]
+[gd_scene load_steps=17 format=3 uid="uid://bdqphig6mwh74"]
 
 [ext_resource type="Script" uid="uid://cuk1e8qyvv72d" path="res://DialogueSystem.gd" id="1_qmr60"]
 [ext_resource type="Texture2D" uid="uid://4sb36fyvtvou" path="res://image/MainFrame.png" id="2_8k1qw"]
 [ext_resource type="Texture2D" uid="uid://3ay2g43pfle7" path="res://image/Faceframe.png" id="3_pwo4j"]
 [ext_resource type="Texture2D" uid="uid://cm7na226dcven" path="res://表情/通常.jpg" id="4_chjrq"]
-[ext_resource type="FontFile" uid="uid://b3v2ewqdondn0" path="res://GenEiLateMinP_v2.ttf" id="5_6irky"]
+[ext_resource type="Texture2D" uid="uid://b36anmm5xcqhp" path="res://image/onpu_sheet.png" id="5_1b33m"]
+[ext_resource type="FontFile" uid="uid://b3v2ewqdondn0" path="res://fonnto/GenEiLateMinP_v2.ttf" id="5_6irky"]
 [ext_resource type="Resource" uid="uid://bsve3eljufy85" path="res://セリフ/test_talk.tres" id="5_8k1qw"]
 [ext_resource type="Resource" uid="uid://6yiavjt3xyg" path="res://セリフ/test_talk2.tres" id="6_pwo4j"]
+[ext_resource type="Resource" uid="uid://bm2r53u6r5807" path="res://セリフ/idle.tres" id="7_beig3"]
 [ext_resource type="Resource" uid="uid://v8yjj610obva" path="res://セリフ/test_talk3.tres" id="7_chjrq"]
 [ext_resource type="Resource" uid="uid://c8lackb8xqs7w" path="res://セリフ/test_talk4.tres" id="9_058q4"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_beig3"]
+particles_animation = true
+particles_anim_h_frames = 2
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_31k7g"]
+_data = [Vector2(0.08835342, 0), 0.0, 0.0, 0, 0, Vector2(0.47791162, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6irky"]
 content_margin_left = 10.0
@@ -31,9 +43,12 @@ tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(1, 4, 7.0333333, 10),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 1, 4, 7.0333333, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "values": [{
+"args": [ExtResource("7_beig3")],
+"method": &"play_dialogue"
+}, {
 "args": [ExtResource("5_8k1qw")],
 "method": &"play_dialogue"
 }, {
@@ -118,6 +133,25 @@ offset_right = 236.0
 offset_bottom = 168.0
 texture = ExtResource("4_chjrq")
 expand_mode = 2
+
+[node name="NoteParticles" type="CPUParticles2D" parent="MainFrame/HBox/PortraitContainer"]
+visible = false
+material = SubResource("CanvasItemMaterial_beig3")
+position = Vector2(214, 58)
+emitting = false
+amount = 3
+texture = ExtResource("5_1b33m")
+direction = Vector2(0, -1)
+spread = 40.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 40.0
+tangential_accel_min = 20.0
+tangential_accel_max = 40.0
+scale_amount_min = 0.03
+scale_amount_max = 0.05
+scale_amount_curve = SubResource("Curve_31k7g")
+anim_offset_max = 1.0
 
 [node name="TextContainer" type="Control" parent="MainFrame/HBox"]
 custom_minimum_size = Vector2(800, 0)

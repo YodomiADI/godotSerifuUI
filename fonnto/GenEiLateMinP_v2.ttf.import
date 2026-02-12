@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://cvu77glw4rwgy"
-path="res://.godot/imported/k8x12S.ttf-22a8bab8f1fded8f4713f3c9bb935375.fontdata"
+uid="uid://b3v2ewqdondn0"
+path="res://.godot/imported/GenEiLateMinP_v2.ttf-5b6e2091d187596f09863d5cc1219aac.fontdata"
 
 [deps]
 
-source_file="res://k8x12S.ttf"
-dest_files=["res://.godot/imported/k8x12S.ttf-22a8bab8f1fded8f4713f3c9bb935375.fontdata"]
+source_file="res://fonnto/GenEiLateMinP_v2.ttf"
+dest_files=["res://.godot/imported/GenEiLateMinP_v2.ttf-5b6e2091d187596f09863d5cc1219aac.fontdata"]
 
 [params]
 

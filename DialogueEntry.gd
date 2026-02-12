@@ -1,7 +1,11 @@
-#DialogueEntry.gd
+# DialogueEntry.gd
 extends Resource
 class_name DialogueEntry
 
-@export var character_name: String = "名前"
-@export var portrait: Texture2D            # ここに1:1の顔画像をドロップ
-@export_multiline var text: String = ""    # セリフ本文
+# エフェクトの種類を定義
+enum EffectType { NONE, NOTES, LAUGH }
+
+@export var character_name: String = ""
+@export var portrait: Texture2D
+@export_multiline var text: String = ""
+@export var effect: EffectType = EffectType.NONE # インスペクターで選べるようになります
