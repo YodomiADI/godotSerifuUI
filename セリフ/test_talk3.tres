@@ -6,5 +6,6 @@
 [resource]
 script = ExtResource("1_fqpy4")
 portrait = ExtResource("1_1kmkj")
-text = "おしりで戦うのはなんなんだろう……"
+text = "この洞窟の中は暗いね。
+どんな敵がいるかわからないね。"
 metadata/_custom_type_script = "uid://dl1gyynno32tb"

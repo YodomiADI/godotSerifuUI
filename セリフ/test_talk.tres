@@ -7,5 +7,6 @@
 script = ExtResource("2_s7h42")
 character_name = ""
 portrait = ExtResource("1_3tfr0")
-text = "ちょっと敵が強いな……"
+text = "ちょっと自信ないけど……
+このゲームを始めていくよ。"
 metadata/_custom_type_script = "uid://dl1gyynno32tb"

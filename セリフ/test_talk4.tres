@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DialogueEntry" load_steps=3 format=3 uid="uid://c8lackb8xqs7w"]
+
+[ext_resource type="Texture2D" uid="uid://cmbrlth6y6v5x" path="res://表情/にっこり.jpg" id="1_1gaoy"]
+[ext_resource type="Script" uid="uid://dl1gyynno32tb" path="res://DialogueEntry.gd" id="1_qwfi7"]
+
+[resource]
+script = ExtResource("1_qwfi7")
+portrait = ExtResource("1_1gaoy")
+text = "弾は跳ね返るやつみたいだ。
+ぺしぺし。"
+metadata/_custom_type_script = "uid://dl1gyynno32tb"
