@@ -8,4 +8,5 @@ script = ExtResource("1_fqpy4")
 portrait = ExtResource("1_1kmkj")
 text = "この洞窟の中は暗いね。
 どんな敵がいるかわからないね。"
+effect = 2
 metadata/_custom_type_script = "uid://dl1gyynno32tb"

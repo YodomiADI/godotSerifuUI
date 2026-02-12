@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueEntry" load_steps=3 format=3 uid="uid://bm2r53u6r5807"]
+
+[ext_resource type="Script" uid="uid://dl1gyynno32tb" path="res://DialogueEntry.gd" id="1_iadkx"]
+[ext_resource type="Texture2D" uid="uid://cd45ppn1m2j3a" path="res://表情/笑顔.jpg" id="1_w5234"]
+
+[resource]
+script = ExtResource("1_iadkx")
+portrait = ExtResource("1_w5234")
+metadata/_custom_type_script = "uid://dl1gyynno32tb"
